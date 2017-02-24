@@ -1,0 +1,16 @@
+*.DS_Store
+*.class
+*.project
+*.classpath
+*.springBeans
+*.settings
+*.mvn
+*target
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
