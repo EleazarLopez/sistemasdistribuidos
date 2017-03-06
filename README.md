@@ -24,4 +24,4 @@ Web dedicada a la gestión y consulta de una liga de fútbol
 <https://trello.com/b/x4abf2Hm/sistemas-distribuidos>
 
 ## Diagrama entidad relación
-![alt text](https://github.com/cfbenito/sistemasdistribuidos/images/DiagramaER.png "Diagrama ER")
+![alt text](https://github.com/cfbenito/sistemasdistribuidos/raw/master/images/DiagramaER.png "Diagrama ER")
