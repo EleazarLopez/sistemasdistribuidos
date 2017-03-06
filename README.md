@@ -33,7 +33,7 @@ Web dedicada a la gestión y consulta de una liga de fútbol
 
 Muestra Listado de las temporadas
 
-![alt text](https://github.com/cfbenito/sistemasdistribuidos/raw/master/images/TemporadaListado.png "")
+![alt text](https://github.com/cfbenito/sistemasdistribuidos/raw/master/images/TemporadasListado.png "")
 
 ###Nueva Temporada
 
