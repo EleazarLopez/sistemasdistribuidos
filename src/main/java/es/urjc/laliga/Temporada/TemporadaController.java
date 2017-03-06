@@ -7,11 +7,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import es.urjc.laliga.Partido.PartidoRepository;
+
 @Controller
 public class TemporadaController {
 	
 	@Autowired
 	private TemporadaRepository TemporadaRepository;
+	@Autowired
+	private PartidoRepository PartidoRepository;
 
 	@RequestMapping("/temporada")
 	public String temporadaList( Model model) {
@@ -37,6 +41,7 @@ public class TemporadaController {
 	@RequestMapping("/temporada/{id}")
 	public String temporadaDetail( Model model, @PathVariable long id) {
 		model.addAttribute("temporada", TemporadaRepository.findOne(id));
+		model.addAttribute("calendario", PartidoRepository.findByTemporadaOrderByFecha(TemporadaRepository.findOne(id)));
 		
 		return "temporadaDetail_template";
 	}

@@ -22,28 +22,32 @@
 
     <div class="container theme-showcase">
    		
-		<form class="form-horizontal" action="/sancion/add" method="post">
+		<form class="form-horizontal" action="/partido/add" method="post">
 		
 		  <div class="form-group">
-		    <label for="jugador" class="col-sm-2 control-label">Jugador</label>
+		    <label for="equipo_c" class="col-sm-2 control-label">Equipo Casa</label>
 		    <div class="col-sm-10">
-	      		<select class="form-control" name="jugador">
-		      		{{#jugadores}}
+	      		<select class="form-control" name="equipo_c">
+		      		{{#equipos}}
 		      			<option value="{{id}}">{{nombre}}</option>
-					{{/jugadores}}
+					{{/equipos}}
 			</select>
 		    </div>
 		  </div>
 		  <div class="form-group">
-		    <label for="fecha_inicio" class="col-sm-2 control-label">Fecha inicio</label>
+		    <label for="equipo_v" class="col-sm-2 control-label">Equipo Visitante</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" placeholder=dd/mm/yyyy name="fecha_inicio" id="fecha_inicio">
+	      		<select class="form-control" name="equipo_v">
+		      		{{#equipos}}
+		      			<option value="{{id}}">{{nombre}}</option>
+					{{/equipos}}
+			</select>
 		    </div>
 		  </div>
-		 <div class="form-group">
-		    <label for="fecha_fin" class="col-sm-2 control-label">Fecha fin</label>
+		  <div class="form-group">
+		    <label for="fecha" class="col-sm-2 control-label">Fecha</label>
 		    <div class="col-sm-10">
-		      <input type="text" class="form-control" placeholder=dd/mm/yyyy name="fecha_fin" id="fecha_fin">
+		      <input type="text" class="form-control" placeholder=dd/mm/yyyy name="fecha" id="fecha">
 		    </div>
 		  </div>
 		  <div class="form-group">

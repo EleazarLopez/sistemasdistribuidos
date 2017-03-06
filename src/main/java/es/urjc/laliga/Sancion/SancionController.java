@@ -23,7 +23,7 @@ public class SancionController {
 	@Autowired
 	private SancionRepository SancionRepository;
 
-	@RequestMapping("/sancion/{id}")
+	@RequestMapping("/sancion/{temporada}")
 	public String sancionList( Model model, @PathVariable long temporada) {
 		
 		model.addAttribute("sanciones", SancionRepository.findByTemporada(TemporadaRepository.findOne(temporada)));
@@ -40,15 +40,16 @@ public class SancionController {
 	}
 	
 	@RequestMapping("/sancion/nuevo_form/{temporada}")
-	public String jugadorNewForm( Model model, @PathVariable long temporada) {
+	public String sancionNewForm( Model model, @PathVariable long temporada) {
 		model.addAttribute("temporada", temporada);
 		model.addAttribute("jugadores", JugadorRepository.findByEquipo_Temporada(TemporadaRepository.findOne(temporada)));
 		return "sancionNewForm_template";
 	}
 	
 	@PostMapping("/sancion/add")
-	public String jugadorAdd( Model model, Sancion sancion, @RequestParam long temporada) {
+	public String sancionAdd( Model model, Sancion sancion, @RequestParam long temporada, @RequestParam long jugador) {
 		sancion.setTemporada( TemporadaRepository.findOne(temporada) );
+		sancion.setJugador( JugadorRepository.findOne(jugador) );
 		SancionRepository.save(sancion);
 		model.addAttribute("sancion", sancion);
 

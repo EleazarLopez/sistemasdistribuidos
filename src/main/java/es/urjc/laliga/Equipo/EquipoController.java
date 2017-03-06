@@ -23,6 +23,7 @@ public class EquipoController {
 	public String equipoList( Model model, @PathVariable long temporada) {
 		
 		model.addAttribute("equipos", EquipoRepository.findByTemporada(TemporadaRepository.findOne(temporada)));
+		model.addAttribute("temporada", temporada);
 		
 		return "equipoList_template";
 	}

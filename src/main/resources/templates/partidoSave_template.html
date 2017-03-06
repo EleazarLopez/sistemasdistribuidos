@@ -21,18 +21,10 @@
     </nav>
 
     <div class="container theme-showcase">
+	   
+	    <h1>El partido {{partido.equipo_c.nombre}} - {{partido.equipo_v.nombre}} para el {{partido.fecha}} ha sido guardada correctamente</h1>
 	    
-	    <div class="row">
-		      <a href="/sancion/nuevo_form/{{temporada}}" class="btn btn-success">Nueva Sanción</a>
-		</div>
-		<div class="page-header">
-	    	<h1>Sanciones</h1>
-	    </div>
-		<ul class="list-group">
-		{{#sanciones}}
-			<li class="list-group-item"><a href="/sancion/detail/{{id}}">{{jugador.nombre}} -- {{temporada.nombre}}</a></li>
-		{{/sanciones}}
-		</ul>
+	    <a href="/partido/nuevo_form/{{partido.temporada.id}}">Agregar otro partido a la temporada {{partido.temporada.nombre}}</a>
 			
        
 

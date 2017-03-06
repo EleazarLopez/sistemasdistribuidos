@@ -28,16 +28,32 @@
 	    <div class="page-header">
 	    	<h2>Calendario</h2>
 	    </div>
+	    <ul class="list-group">
+		{{#calendario}}
+			<li class="list-group-item"><a href="/partido/detail/{{id}}">{{fecha}}   {{equipo_c.nombre}} {{#goles_c}}{{goles_c}}{{/goles_c}} - {{#goles_v}}{{goles_v}}{{/goles_v}} {{equipo_v.nombre}}</a></li>
+		{{/calendario}}
+		</ul>
+		<div class="page-header">
+	    	<h2>Clasificación</h2>
+	    </div>
+	    <ul class="list-group">
+		{{#calendario}}
+			<li class="list-group-item"><a href="/partido/detail/{{id}}">{{fecha}}   {{equipo_c.nombre}} {{#goles_c}}{{goles_c}}{{/goles_c}} - {{#goles_v}}{{goles_v}}{{/goles_v}} {{equipo_v.nombre}}</a></li>
+		{{/calendario}}
+		</ul>
 	    
 	    <div class="row">
 	    	<div class="col-sm-3">
 		      <a href="/equipo/nuevo_form/{{temporada.id}}" class="btn btn-success">Nuevo Equipo</a>
 		     </div>
 		     <div class="col-sm-3">
-		      <a href="/sancion/{{temporada.id}}" class="btn btn-warning">Nueva sanción</a>
+		      <a href="/sancion/{{temporada.id}}" class="btn btn-warning">Ver sanciones</a>
 		     </div>
 		    <div class="col-sm-3">
 		      <a href="/equipo/{{temporada.id}}" class="btn btn-primary">Ver equipos</a>
+		     </div>
+		     <div class="col-sm-3">
+		      <a href="/partido/{{temporada.id}}" class="btn btn-info">Ver partidos</a>
 		     </div>
 		     
 		</div>
