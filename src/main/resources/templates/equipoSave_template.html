@@ -12,9 +12,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="/temporada">Temporadas</a></li>
-            <li><a href="/partidos">Partidos</a></li>
+            <li><a href="/temporada">Temporadas</a></li>
+            {{#admin}}
+				<li><a href="/logout">Logout</a></li>
+			{{/admin}}
+			{{^admin}}
+				<li><a href="/login">login</a></li>
+			{{/admin}}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -23,9 +27,9 @@
     <div class="container theme-showcase">
 	   
 	    <h1>El equipo {{nombre}} ha sido guardada correctamente para la temporada {{temporada.nombre}}</h1>
-	    
+	    {{#admin}}
 	    <a href="/equipo/nuevo_form/{{temporada.id}}">Agregar otro equipo a la temporada {{temporada.nombre}}</a>
-			
+		{{/admin}}	
        
 
     </div><!-- /.container -->

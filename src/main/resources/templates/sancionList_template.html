@@ -12,19 +12,24 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="/temporada">Temporadas</a></li>
-            <li><a href="/partidos">Partidos</a></li>
+            <li><a href="/temporada">Temporadas</a></li>
+            {{#admin}}
+				<li><a href="/logout">Logout</a></li>
+			{{/admin}}
+			{{^admin}}
+				<li><a href="/login">login</a></li>
+			{{/admin}}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container theme-showcase">
-	    
+	    {{#admin}}
 	    <div class="row">
 		      <a href="/sancion/nuevo_form/{{temporada}}" class="btn btn-success">Nueva Sanción</a>
 		</div>
+		{{/admin}}
 		<div class="page-header">
 	    	<h1>Sanciones</h1>
 	    </div>

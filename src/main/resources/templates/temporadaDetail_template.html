@@ -12,9 +12,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="#">Home</a></li>
-            <li class="active"><a href="/temporada">Temporadas</a></li>
-            <li><a href="/partidos">Partidos</a></li>
+            <li><a href="/temporada">Temporadas</a></li>
+            {{#admin}}
+				<li><a href="/logout">Logout</a></li>
+			{{/admin}}
+			{{^admin}}
+				<li><a href="/login">login</a></li>
+			{{/admin}}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -35,9 +39,11 @@
 		</ul>
 	    
 	    <div class="row">
+	    	{{#admin}}
 	    	<div class="col-sm-3">
 		      <a href="/equipo/nuevo_form/{{temporada.id}}" class="btn btn-success">Nuevo Equipo</a>
 		     </div>
+		     {{/admin}}
 		     <div class="col-sm-3">
 		      <a href="/sancion/{{temporada.id}}" class="btn btn-warning">Ver sanciones</a>
 		     </div>
